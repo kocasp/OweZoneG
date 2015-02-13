@@ -1,3 +1,3 @@
 == OweZone:
 
-The App is currently available and functioning at: <a href="http://www.owezone.net">www.owezone.net</a>
+The App is currently available and functioning at: www.owezone.net
