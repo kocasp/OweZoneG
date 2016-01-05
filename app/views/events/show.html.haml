@@ -12,7 +12,7 @@
         %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
         Welcome to OweZone.net!
         %br/
-        %strong If you have any suggestions or questions, please mail to konrad@mediacode.eu
+        %strong If you have any suggestions or questions, please email me: kocasp@gmail.com
   .row
     .col-lg-4
       .panel.panel-info
@@ -75,7 +75,7 @@
                         %button.btn.btn-default.btn-xs.pull-right.takes_part{"data-placement" => "right", "data-toggle" => "tooltip", :title => "You can't remove a person that takes part in transaction.", :type => "button"}
                           %i.fa.fa-times
           .text-right
-            %a{:class => "btn btn-default btn-block #{"no_people" if @event.people.count == 0}", "data-container" => "body", "data-content" => "Start with adding some people to your event!", "data-placement" => "top", "data-toggle" => "popover", :href => new_event_person_path(@event), :role => "button"} Add Person
+            %a{:class => "btn btn-default btn-block #{"no_people" if @event.people.count < 2}", "data-container" => "body", "data-content" => "Start with adding at least 2 people to your event!", "data-placement" => "top", "data-toggle" => "popover", :href => new_event_person_path(@event), :role => "button"} Add Person
       .panel.panel-primary
         .panel-heading
           %h3.panel-title
@@ -115,8 +115,8 @@
                       %a.btn.btn-primary.btn-xs{:href => edit_details_transaction_path(t), :role => "button"} Edit details
                       %a.btn.btn-danger.btn-xs{"data-confirm" => "Are you sure?", "data-method" => "delete", :href => "/transactions/#{t.id}", :rel => "nofollow", :role => "button"}
                         %i.fa.fa-times
-          %div{:class => "text-right #{"people_first" if @event.people.count == 0}", "data-placement" => "top", "data-toggle" => "tooltip", :title => "First add some people"}
-            %a{:class => "btn btn-default btn-block #{"disabled" if @event.people.count == 0}", :href => new_event_transaction_path(@event), :role => "button"} Add Transaction
+          %div{:class => "text-right #{"people_first" if @event.people.count < 2}", "data-placement" => "top", "data-toggle" => "tooltip", :title => "First add at least 2 people"}
+            %a{:class => "btn btn-default btn-block #{"disabled" if @event.people.count < 2}", :href => new_event_transaction_path(@event), :role => "button"} Add Transaction
 #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
     .modal-content
@@ -127,7 +127,7 @@
         loading ...
 :javascript
   $(window).load(function(){
-      
+
       $('.people_first').tooltip();
       $('.takes_part').tooltip();
       $('.no_people').popover('show');
@@ -136,6 +136,6 @@
                  .animate({"top":"-=20px"},900)
                  .animate({"top":"+=20px"},900,jumpingPop)
      }
-  
+
     jumpingPop();
   });
