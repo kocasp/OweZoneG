@@ -37,3 +37,11 @@
   padding: 0px;
   color: #FF6038;
 }
+body{
+  background-color: #1a4055;
+  color: white;
+}
+.colorset-white{
+  background-color: #fff;
+  color: #000;
+}

@@ -33,43 +33,44 @@
   %br/
   %br/
 / /container full
-.container
-  %hr/
-  .row
-    .col-md-10.col-md-offset-1
-      %h2 Set up your event and add people.
-      %p
-      %center= image_tag "add_users.jpg"
-      %br/
-      %div
-        First thing you should do after creating an event is adding some participants. You can do it by clicking #{image_tag "add_person_button.jpg"} button on your dashboard. After adding few people take a look on your
-        %strong Debts Statistics
-        table. Every person will show up with current balance zero. Next thing you can do is to add some
-        = succeed "." do
-          %strong transaction
-  %br/
-  .row
-    .col-md-10.col-md-offset-1
-      %h2 Add some transactions.
-      %p
-      %center= image_tag "add_transaction.jpg"
-      %br/
-      %div
-        When you have some people on the list, you can add transactions. Transaction is a purchase of some goods. You can select who pays for them and who should be charged for them in the statistics.
+.colorset-white
+  .container
+    %hr/
+    .row
+      .col-md-10.col-md-offset-1
+        %h2 Set up your event and add people.
+        %p
+        %center= image_tag "add_users.jpg"
         %br/
-        %strong For example:
+        %div
+          First thing you should do after creating an event is adding some participants. You can do it by clicking #{image_tag "add_person_button.jpg"} button on your dashboard. After adding few people take a look on your
+          %strong Debts Statistics
+          table. Every person will show up with current balance zero. Next thing you can do is to add some
+          = succeed "." do
+            %strong transaction
+    %br/
+    .row
+      .col-md-10.col-md-offset-1
+        %h2 Add some transactions.
+        %p
+        %center= image_tag "add_transaction.jpg"
         %br/
-        There are 4 people - James, John, Nathan and Sidney. You've bought some common food.James paid 200 and John paid 100. John is not going to eat it, so he should not be charged for that.
+        %div
+          When you have some people on the list, you can add transactions. Transaction is a purchase of some goods. You can select who pays for them and who should be charged for them in the statistics.
+          %br/
+          %strong For example:
+          %br/
+          There are 4 people - James, John, Nathan and Sidney. You've bought some common food.James paid 200 and John paid 100. John is not going to eat it, so he should not be charged for that.
+          %br/
+          In that situation you should check only James, Nathan and Sidney names. Then type "200" next to James and "100" next to John (because they were the ones who paid).
+    .row
+      .col-md-10.col-md-offset-1
         %br/
-        In that situation you should check only James, Nathan and Sidney names. Then type "200" next to James and "100" next to John (because they were the ones who paid).
-  .row
-    .col-md-10.col-md-offset-1
-      %br/
-      %h2 Make some changes when you want.
-      %div
-        You can add a participant in every moment. When a person comes up and he wants to join your event, you can just add him to the list and check his name in the transactions you already created.
-  .row
-    .col-md-10.col-md-offset-1
+        %h2 Make some changes when you want.
+        %div
+          You can add a participant in every moment. When a person comes up and he wants to join your event, you can just add him to the list and check his name in the transactions you already created.
+    .row
+      .col-md-10.col-md-offset-1
       \.
 %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", :type => "text/javascript"}
 %script{:src => "http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js", :type => "text/javascript"}
